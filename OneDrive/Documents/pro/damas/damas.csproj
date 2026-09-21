@@ -136,10 +136,53 @@ if (cargar =="s"   || cargar == "S")
             Console.WriteLine("\n--- Sentidos donde puedes moverte ---");
             if (turno == 1)
                 {
-                    if (colOrigen - 1 >= 0  && filaOrigen + 1 <=0)
-                       Console.WriteLine("- Izquierda Abajo (fila: " + (filaOrigen + - 1) + ", Col: " + (colOrigen - 1) + ")");
-                    if
+                    if (colOrigen - 1 >= 0  && filaOrigen - 1 >=0)
+                       Console.WriteLine("- Izquierda Arriba (fila: " + (filaOrigen - 1) + ", Col: " + (colOrigen - 1) + ")");
+                    if (colOrigen + 1 <=7 && filaOrigen - 1 >= 0)
+                    Console.WriteLine("- Derecha Arriba (fila: " + (filaOrigen - 1) + ", Col: " (colOrigen + 1) + ")");
                 }
+                else
+                {
+                    if (colOrigen - 1 >= 0  && filaOrigen + 1 >=7)
+                    Console.WriteLine("-Izquierda Abajo (Fila: " + (filaOrigen + 1) + ", Col: " + (colOrigen - 1) + ")");
+                    if (colOrigen + 1 >= 7  && filaOrigen + 1 >=7)
+                    Console.WriteLine("-Derecha  Abajo (Fila: " + (filaOrigen + 1) + ", Col: " + (colOrigen + 1) + ")");
+                }
+
+                Console.Write("\nFila destino: ");
+                int FilaDestino = int.Parse(Console.ReadLine());
+                Console.Write("Columna destino: ");
+                int ColDestino = int.Parse(Console.ReadLine());
+
+                bool movimientoValido = false;
+
+                if (tablero[FilaDestino, ColDestino] == 0)
+                {
+                    if (turno == && FilaDestino == filaOrigen - 1 && Math.Abs(ColDestino - colOrigen) == 1)
+                    {
+                        movimientoValido = true;
+                    }
+                    else
+                    {
+                        movimientoValido = true;
+                    }
+                    
+                    if (Math.Abs(FilaDestino - filaOrigen) == 2 && Math.Abs(ColDestino - colOrigen) ==2)
+                    {
+                        int FilaMedio = (filaOrigen + FilaDestino) / 2;
+                        int ColMedio = (ColDestino + ColDestino) / 2;
+
+                        if (tablero[FilaMedio, ColMedio] != 0 && tablero[FilaMedio,ColMedio] != turno)
+                        {
+                            tablero[FilaMedio,ColMedio] = 0; 
+                            movimientoValido = true;
+                        }
+                    }
+
+                }
+                if (movimientoValido)
+                
+
            }
         }
     }
