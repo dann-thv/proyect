@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.IO;
-using System.Runtime.CompilerServices;
 
 namespace DAMAS
 {
@@ -33,7 +32,7 @@ namespace DAMAS
                     }
                 }
             }
-            Cosole.writeLine(""====JUEGO DE DAMAS====");
+            Console.writeLine(""====JUEGO DE DAMAS====");
 Cosole.write("Quiers cargar la partida anteriosr? (s/n): ");
 string cargar = Console.ReadLine();
 
@@ -78,5 +77,49 @@ if (cargar =="s"   || cargar == "S")
             }
             bool jugando = true;
 
+            while (jugando)
+            {
+                Console.Clear();
+                Console.WriteLine("   0 1 2 3 4 5 6 7");
+                Console.WriteLine("-------------------");
+
+                for (int f = 0; f < 8; f++)
+                {
+                    Console.ResetColor();
+                    Console.Write(f + "| ");
+
+                    for (int = 0; c < 8; c++)
+                    {
+                        if ((f + c) % 2 == 0)
+                        {
+                            Console.BackgroundColor = ConsoleColor.Gray;
+                        }
+                        else
+                        {
+                            Console.BackgroundColor = ConsoleColor.DarkGray;
+                        }
+
+                        if (tablero[f, c] == 0)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Black;
+                            Console.Write(". ");
+                        }
+                        else if (tablero[f, c] == 1)
+                        {
+                            Console.BackgroundColor = ConsoleColor.Cyan
+                            Console.Write("O ");
+                        }
+                        else if (tablero[f, c] == 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red
+                            Console.Write("X ");
+                        }
+                   }
+                   Console.ResetColor();
+                   Console.WriteLine();
+
+                }
+           }
+        }
     }
-}
+}    
