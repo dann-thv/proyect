@@ -108,7 +108,7 @@ namespace DAMAS
                         }
                         else if (tablero[f, c] == 1)
                         {
-                            Console.BackgroundColor = ConsoleColor.Blue;
+                            Console.ForegroundColor = ConsoleColor.Blue;
                             Console.Write("O ");
                         }
                         else if (tablero[f, c] == 2)
