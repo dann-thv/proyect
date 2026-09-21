@@ -1,0 +1,82 @@
+﻿using System;
+using System.ComponentModel;
+using System.IO;
+using System.Runtime.CompilerServices;
+
+namespace DAMAS
+{
+    class program
+    {
+        static void main(string[] args)
+        {
+            int[,] tablero = new int[8, 8];
+            string[] historial = new string[100];
+            int Contadormovimientos = 0;
+
+            int turno = 1;
+            
+            for (int f = 0; 8; f++)
+            {
+                for (int c = 0; 8; c++)
+                {
+                    tablero[f, c] = 0;
+                    if ((f + c) % 2 != 0)
+                    {
+                        if (f < 3)
+                        { 
+                            tablero[f,c] = 2;
+                        }
+                        if (f > 4 )
+                        {
+                            tablero[f,c] = 1;
+                        }
+                    }
+                }
+            }
+            Cosole.writeLine(""====JUEGO DE DAMAS====");
+Cosole.write("Quiers cargar la partida anteriosr? (s/n): ");
+string cargar = Console.ReadLine();
+
+if (cargar =="s"   || cargar == "S")
+            {
+                if(File.Exists("Partida"))
+                {
+                    StreamReader lector = new StreamReader("partida.txt");
+                    turno = int.Parse(lector.ReadLine());
+                    while (linea != null)
+                    {
+                        historial[Contadormovimientos] = linea;
+                        Contadormovimientos++;
+
+                        string[] datos = linea.Split(',');
+                        int fo = int.Parse(datos[0]);
+                        int co = int.Parse(datos[1]);
+                        int fd = int.Parse(datos[2]);
+                        int cd = int.Parse(datos[3]);
+
+                        int ficha = tablero[fo,co];
+                        tablero[fd, cd] = ficha; 
+                        tablero[fo, co] = 0;
+
+
+                        if (Math.Abs(fd - fo) ==2)
+                        {
+                            int fm = (fo + fd) / 2;
+                            int cm = (co + cd) / 2;
+                            tablero[fm, cm] = 0;
+                        }
+                        linea = lector.ReadLine();
+                    }
+                    lector.Close();
+                    Console.WriteLine("Partida cargada exitosamente. Presiona ENTER");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    Console.ReadLine();
+                }
+            }
+            bool jugando = true;
+
+    }
+}
