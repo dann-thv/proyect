@@ -117,7 +117,28 @@ if (cargar =="s"   || cargar == "S")
                    }
                    Console.ResetColor();
                    Console.WriteLine();
+                }
+                Console.WriteLine("\n Turno del jugador" + turno);
 
+                Console.Write("Fila de la ficha a mover: ");
+                int filaOrigen = int.Parse(Console.ReadLine());
+                Console.Write("Columa de la ficha a elegir: ");
+                int colOrigen = int.Parse(Console.ReadLine());
+
+                if (tablero[filaOrigen, colOrigen] != turno)
+                {
+                    Console.WriteLine("Ahi no hay uan ficha tuya! presiona ENTER para reintentar.");
+                    Console.ReadLine();
+                    continue;
+                }
+
+
+            Console.WriteLine("\n--- Sentidos donde puedes moverte ---");
+            if (turno == 1)
+                {
+                    if (colOrigen - 1 >= 0  && filaOrigen + 1 <=0)
+                       Console.WriteLine("- Izquierda Abajo (fila: " + (filaOrigen + - 1) + ", Col: " + (colOrigen - 1) + ")");
+                    if
                 }
            }
         }
