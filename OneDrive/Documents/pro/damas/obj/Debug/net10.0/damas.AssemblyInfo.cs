@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("damas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0e3b373c4543ffa83781d386b7a38e093c42b88")]
 [assembly: System.Reflection.AssemblyProductAttribute("damas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("damas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

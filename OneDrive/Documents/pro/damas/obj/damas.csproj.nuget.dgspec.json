@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dpoll\\OneDrive\\Documents\\pro\\damas\\damas.csproj": {}
+    "C:\\Users\\dpoll\\OneDrive\\Documents\\pro\\damas\\OneDrive\\Documents\\pro\\damas\\damas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dpoll\\OneDrive\\Documents\\pro\\damas\\damas.csproj": {
+    "C:\\Users\\dpoll\\OneDrive\\Documents\\pro\\damas\\OneDrive\\Documents\\pro\\damas\\damas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dpoll\\OneDrive\\Documents\\pro\\damas\\damas.csproj",
+        "projectUniqueName": "C:\\Users\\dpoll\\OneDrive\\Documents\\pro\\damas\\OneDrive\\Documents\\pro\\damas\\damas.csproj",
         "projectName": "damas",
-        "projectPath": "C:\\Users\\dpoll\\OneDrive\\Documents\\pro\\damas\\damas.csproj",
+        "projectPath": "C:\\Users\\dpoll\\OneDrive\\Documents\\pro\\damas\\OneDrive\\Documents\\pro\\damas\\damas.csproj",
         "packagesPath": "C:\\Users\\dpoll\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dpoll\\OneDrive\\Documents\\pro\\damas\\obj\\",
+        "outputPath": "C:\\Users\\dpoll\\OneDrive\\Documents\\pro\\damas\\OneDrive\\Documents\\pro\\damas\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dpoll\\AppData\\Roaming\\NuGet\\NuGet.Config"
