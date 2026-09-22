@@ -106,18 +106,22 @@ namespace DAMAS
                         if (f == cursorFila && c == cursorcol)
                         {
                             Console.BackgroundColor = ConsoleColor.Yellow;
+                            Console.ForegroundColor = ConsoleColor.Black;
                         }
                         else if (f == filaOrigen && c == colOrigen)
                         {
                             Console.BackgroundColor = ConsoleColor.Green;
+                            Console.ForegroundColor = ConsoleColor.White;
                         }
-                        if ((f + c) % 2 == 0)
+                        else if ((f + c) % 2 == 0)
                         {
                             Console.BackgroundColor = ConsoleColor.Gray;
+                            Console.ForegroundColor = ConsoleColor.Black;
                         }
                         else
                         {
                             Console.BackgroundColor = ConsoleColor.DarkGray;
+                            Console.ForegroundColor = ConsoleColor.White;
                         }
 
                         if (tablero[f, c] == 0)
@@ -168,7 +172,7 @@ namespace DAMAS
                     int ganador = (turno == 1) ? 2 : 1;
                     Console.WriteLine("\n jugador " + turno + " se ha rendido!");
                     Console.WriteLine("GANA EL JUGADOR" + ganador + "!");
-                    Console.WriteLine("$Tiempo total: {tiempoJugado.Minutes:D2}m {tiempoJugado.Seconds:D2}s");
+                    Console.WriteLine($"Tiempo total: {tiempoJugado.Minutes:D2}m {tiempoJugado.Seconds:D2}s");
                     jugando = false;
                     Console.ReadLine();
                     break;
@@ -229,28 +233,27 @@ namespace DAMAS
                                 }
                                 else if (turno == 2 && difFila == 1)
                                 {
+                                    movimientoValido = true;
+                                }
+                            }
+                            else if (difCol == 2 && Math.Abs(difFila) == 2)
+                            {
+                                bool direccionCorrecta = (turno == 1 && difFila == -2) || (turno == 2 && difFila == 2);
+
+                                if (direccionCorrecta)
+                                {
+                                    int FilaMedio = (filaOrigen + FilaDestino) / 2;
+                                    int ColMedio = (colOrigen + ColDestino) / 2;
+                                    int fichaEnemiga = (turno == 1) ? 2 : 1;
+
+                                    if (tablero[FilaMedio, ColMedio] == fichaEnemiga)
                                     {
+                                        tablero[FilaMedio, ColMedio] = 0;
                                         movimientoValido = true;
                                     }
                                 }
-                                else if (difCol == 2 && Math.Abs(difFila) == 2)
-                                {
-                                    bool direccionCorrecta = (turno == 1 && difFila == -2) || (turno == 2 && difFila == 2);
-
-                                    if (direccionCorrecta)
-                                    {
-                                        int FilaMedio = (filaOrigen + FilaDestino) / 2;
-                                        int ColMedio = (colOrigen + ColDestino) / 2;
-                                        int fichaEnemiga = (turno == 1) ? 2 : 1;
-
-                                        if (tablero[FilaMedio, ColMedio] != 0 && tablero[FilaMedio, ColMedio] != turno)
-                                        {
-                                            tablero[FilaMedio, ColMedio] = 0;
-                                            movimientoValido = true;
-                                        }
-                                    }
-                                }
                             }
+
                         }
                         if (movimientoValido)
                         {
@@ -292,4 +295,4 @@ namespace DAMAS
             }
         }
     }
-}           
+}
